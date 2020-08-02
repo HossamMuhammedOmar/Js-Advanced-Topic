@@ -21,14 +21,31 @@ The first Execution Context that gets created when the JavaScript engine runs yo
 */
 
 // lets adding A few variable and function and see what happens
-let name = "Hossam";
-let email = "hossamomar9876@gmail.com";
+// let name = "Hossam";
+// let email = "hossamomar9876@gmail.com";
+
+// function getUser() {
+//   return {
+//     name: name,
+//     email: email,
+//   };
+// }
+
+// https://ui.dev/post-images/global-variables-in-creation-phase.png
+
+// Important Links for understand excution context
+// https://ui.dev/
+
+console.log("user", user);
+console.log("age", age);
+console.log("getUser", getUser());
+
+var user = "ahmed";
+var age = "22";
 
 function getUser() {
   return {
-    name: name,
-    email: email,
+    user: user,
+    age: age,
   };
 }
-
-// https://ui.dev/post-images/global-variables-in-creation-phase.png
