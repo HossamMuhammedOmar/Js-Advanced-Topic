@@ -2,10 +2,10 @@
 // Lexical Scoping is also known as static scoping
 
 function greetCustomer() {
-  var customerName = "Ahmed";
+  var customerName = 'Ahmed';
 
   function greetingMsg() {
-    console.log("Hi! " + customerName); // Hi! Ahmed
+    console.log('Hi! ' + customerName); // Hi! Ahmed
   }
   greetingMsg();
 }
@@ -18,7 +18,7 @@ function greetingMsg() {
 }
 
 function anotherGreetCustomer() {
-  var customerName = "Ahmed";
+  var customerName = 'Ahmed';
   greetingMsg();
 }
 // it will give a reference error.
@@ -144,3 +144,42 @@ countValue1(); // 0
 countValue1(); // 1
 countValue2(); // 0
 countValue2(); // 1
+
+// Another Example
+
+//exercise:
+function callMeMaybe() {
+  const callMe = 'Hi!';
+  setTimeout(function () {
+    console.log(callMe);
+  }, 4000);
+}
+
+// callMeMaybe();
+
+// Another exercise
+
+function heavyDuty(item) {
+  const bigArray = new Array(7000).fill('😄');
+  console.log('created!');
+  return bigArray[item];
+}
+
+heavyDuty(699);
+heavyDuty(699);
+heavyDuty(699);
+heavyDuty(699);
+
+// Try To Solve This Problem
+
+function heavyDuty2() {
+  const bigArray = new Array(7000).fill('😄');
+  console.log('created!!!!');
+  return function (item) {
+    console.log(bigArray[item]);
+  };
+}
+
+const aHeavyDuty = heavyDuty2();
+
+aHeavyDuty(700);
