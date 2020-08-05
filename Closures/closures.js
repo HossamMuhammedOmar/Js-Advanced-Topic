@@ -183,3 +183,26 @@ function heavyDuty2() {
 const aHeavyDuty = heavyDuty2();
 
 aHeavyDuty(700);
+
+// Make it so that the initialize function can only be called once!
+let view;
+function initialize() {
+  let callTime = 0;
+  return function () {
+    if (callTime > 0) return;
+    else {
+      callTime++;
+      view = '🏔';
+      console.log('view has been set!');
+    }
+  };
+}
+
+const startIni = initialize();
+
+startIni();
+startIni();
+startIni();
+startIni();
+
+console.log(view);
